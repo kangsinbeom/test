@@ -1,13 +1,12 @@
-const str = "()()()()()()()()";
+const number = 12;
 
-function solution(str) {
-  let result = 0;
-  [...str].forEach((i) => {
-    if (i === "(") result += 1;
-    else result -= 1;
-    if (result < 0) return;
-  });
-  return result >= 0;
+function solution(number) {
+  const stack = [];
+  while (!!number) {
+    stack.push(number % 2);
+    number = ~~(number / 2);
+  }
+  return stack.reduce((acc, curr) => acc + curr, "");
 }
 
-console.log(solution(str));
+console.log(solution(number));
