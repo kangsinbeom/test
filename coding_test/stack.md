@@ -29,3 +29,8 @@ def pop(stack, item):
         stack.pop(item)
         print("데이터 제거 완료")
 ```
+
+### 문제
+
+- 문제 10 괄호 회전하기.
+  ![스크린샷 2025-01-03 오전 8 36 47](https://github.com/user-attachments/assets/86091ab7-41eb-437c-9535-caeb1437a8ea)
