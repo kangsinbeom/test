@@ -21,8 +21,39 @@ def solution_10(string):
         
     return result
 
+# examples_10 = myReadline.get_example("stack_10.txt")
 
-examples_10 = myReadline.get_example("stack_10.txt")
+# for example in examples_10.values():
+#     print(solution_10(example))
 
-for example in examples_10.values():
-    print(solution_10(example))
+def solution_11(string):
+    stack = []
+    for i in string:
+        if len(stack) != 0 and i == stack[-1]:
+            stack.pop()
+        else:
+            stack.append(i)
+    return int(not len(stack) > 0)
+
+# examples_11 = myReadline.get_example("stack_11.txt")
+
+# for example in examples_11.values():
+#     print(solution_11(example))
+    
+
+# examples_11 = myReadline.get_example("stack_11.txt")
+
+# for example in examples_11.values():
+#     print(solution_11(example))
+
+
+def solution_12(array):
+    
+    return array
+
+
+
+examples_12 = myReadline.get_example("stack_12.txt")
+
+for example in examples_12.values():
+    print(list(example))
