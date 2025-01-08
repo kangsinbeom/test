@@ -46,14 +46,45 @@ def solution_11(string):
 # for example in examples_11.values():
 #     print(solution_11(example))
 
-
-def solution_12(array):
+def solution_12(prices):
+    n = len(prices)
+    answer = [0] * n
+    stack = [0]
+    for i in range(1, n):
+        while stack and prices[i] < prices[stack[-1]]:
+            j = stack.pop()
+            answer[j] = i - j
+        stack.append(i)
     
-    return array
+    while stack:
+        j = stack.pop()
+        answer[j] = n - 1- j                
+    return answer
+
+# examples_12 = myReadline.get_example("stack_12.txt")
+
+# for example in examples_12.values():
+#     lst = example.split(" ")
+#     int_lst = [int(x) for x in lst]
+#     # print(solution_12(int_lst))
+#     print(solution_12(int_lst))
 
 
-
-examples_12 = myReadline.get_example("stack_12.txt")
-
-for example in examples_12.values():
-    print(list(example))
+# 문제 13 크레인 인형 뽑기 게임
+def solution_13():
+    board = [[0, 0, 0, 0, 0], [0, 0, 1, 0, 3], [0, 2, 5, 0, 1], [4, 2, 4, 4, 2], [3, 5, 1, 3, 1]]
+    moves = [1, 5, 3, 5, 1, 2, 1, 4]
+    result = 0
+    stack = []
+    for move in moves:
+        for i in range(len(board)):
+            dol = board[i][move - 1]
+            if dol != 0:
+                if stack and stack[-1] == dol:
+                    print(stack, stack[-1], dol)
+                    stack.pop()
+                    result += 2
+                stack.append(dol)
+                board[i][move - 1] = 0
+    return result
+print(solution_13())
