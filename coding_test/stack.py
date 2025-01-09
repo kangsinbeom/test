@@ -87,4 +87,31 @@ def solution_13():
                 stack.append(dol)
                 board[i][move - 1] = 0
     return result
-print(solution_13())
+# print(solution_13())
+
+n = 8
+k = 2
+cmd = ["D 2", 'C', "U 3", "C", "D 4", "C", "U 2", "Z", "Z"]
+
+def solution_14(n, k, cmd):
+    result = "O" * n
+    delete = []
+    for i in range(len(cmd)):
+        if len(cmd[i]) > 1:
+            action, count = cmd[i].split(" ")
+            if action == "D":
+                k += int(count)
+            else: 
+                k -+ int(count)
+        else:
+            if cmd[i] == "C":
+                if k == n:
+                    result = result[:-1] + "X"
+                else:
+                    result = result[:k] + "X" + result[k + 1:]
+                delete.append(k)
+            else:
+                result = result[:delete[-1]] + "O" + result[delete[-1] + 1:]
+                delete.pop()
+    return result
+print(solution_14(n, k, cmd))
