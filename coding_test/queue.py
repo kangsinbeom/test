@@ -18,7 +18,10 @@ def solution_15(n, k):
 # print(solution_15(5, 2))
 
 # 문제 16 기능 개발
-def solution_16():
-    
-    return
-print(solution_16())
+def solution_16(progresses, speeds):
+    result = []
+    while progresses:
+        
+        pass
+    return result
+print(solution_16([93, 30, 55], [1, 30, 5]))
