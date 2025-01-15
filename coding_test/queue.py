@@ -24,4 +24,22 @@ def solution_16(progresses, speeds):
         
         pass
     return result
-print(solution_16([93, 30, 55], [1, 30, 5]))
+# print(solution_16([93, 30, 55], [1, 30, 5]))
+
+def solution_17():
+    cards1 = deque(['i', 'drink', 'want'])
+    cards2 = deque(['water', 'to'])
+    goal = deque(['i', 'want', 'to', 'drink', 'water'])
+    while goal:
+        if goal[0] == cards1[0]:
+            goal.popleft()
+            cards1.popleft()
+        elif  goal[0] == cards2[0]:
+            goal.popleft()
+            cards2.popleft()
+        else:
+            return 'No'
+    
+    return 'Yes'
+
+print(solution_17())
