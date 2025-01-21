@@ -24,3 +24,5 @@ def solution_1(N):
 
 # print(solution_1(N))
 
+# 백준 1260 DFS 와 BFS 실버 2
+
