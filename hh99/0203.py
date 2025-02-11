@@ -17,7 +17,7 @@ def beginner():
                 print(-1)
             else: print(stack[len(stack) - 1])
         
-        # size
+        # sizeㅏ
         elif 'size' in action:
             print(len(stack))
         
